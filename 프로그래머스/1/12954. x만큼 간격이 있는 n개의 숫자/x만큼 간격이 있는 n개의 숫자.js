@@ -1,3 +1,7 @@
 function solution(x, n) {
-    return Array(n).fill(x).map((num,idx)=>num*(idx+1))
+    var answer = [];
+    for (let i = 1; i <= n; i++) {
+        answer.push(x*i)
+    }
+    return answer;
 }
