@@ -1,4 +1,12 @@
 function solution(n) {
-
-    return Array(6).fill(n).map((v,idx) => v = v * (idx + 1)).find((v) => v % 6 === 0 ) / 6;
+    let piece = 6;
+    
+    while (true) { 
+        if (piece % n === 0) {
+            break;
+        }
+        piece += 6;
+    }
+    
+    return piece / 6;
 }
