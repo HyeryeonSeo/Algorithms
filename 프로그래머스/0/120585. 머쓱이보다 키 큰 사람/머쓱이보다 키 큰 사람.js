@@ -1,3 +1,5 @@
 function solution(array, height) {
-    return array.filter(e => e > height).length;
+    var answer = 0;
+    array.forEach(v=> {if(v>height) answer++;})
+    return answer;
 }
