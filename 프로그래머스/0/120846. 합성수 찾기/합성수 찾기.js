@@ -1,12 +1,11 @@
 function solution(n) {
-    let dp = new Array(n+1).fill(1)
-    for(let i = 2 ; i <= n ; i++){
-        if(dp[i]){
-            for(let j = 2 ; i*j <= n ; j++){
-                dp[i*j] = 0
-            }
+	let arr = new Array(n+1).fill(0);
+    
+    for (let i = 1; i <= n; i++) {
+    	for (let j= 1; j <= i; j++) {
+		if (i % j === 0) arr[i]++;
         }
     }
-
-    return dp.filter(el => el === 0).length
+    
+    return arr.filter((v) => v >= 3).length;
 }
